@@ -1,0 +1,151 @@
+:root {
+    --color-background: #A67B5B;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: var(--color-background);
+    text-align: center;
+    height: 100vh;
+    font-family: "Homemade Apple", serif;
+    font-size: 20px;
+    font-weight: bold;
+    background-image: url("../assets/wood-pattern.png");
+}
+
+#game-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-family: "Domine", serif;
+    width: 500px;
+    margin-top: 0px;
+    margin-right: auto;
+    margin-bottom: 0px;
+    margin-left: auto;
+}
+
+h1 {
+    margin: 0 auto;
+    font-size: 35px;
+}
+
+p {
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+button {
+    padding: 10px 20px;
+    font-size: 1rem;
+    cursor: pointer;
+    background-color: white;
+    color: black;
+    border: 3px solid black;
+    border-radius: 5px;
+}
+
+#toggle-animation-btn {
+    margin: 10px;
+}
+
+#game-info {
+    margin: 10px 0;
+    width: 85%;
+    font-size: 16px;
+    display: flex;
+    justify-content: space-between;
+}
+
+#game-info p {
+    margin: 5px 0;
+    color: #333;
+}
+
+#counter {
+    display: flex;
+    background-color: white;
+    color: black;
+    border: 3px solid black;
+    border-radius: 5px;
+    padding-left: 5px;
+    padding-right: 5px;
+}
+
+#time,
+#moves {
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+#game-board-container {
+    padding: 20px;
+    background-color: rgb(0, 0, 0);
+
+    border-radius: 10px;
+}
+
+#game-board {
+    display: grid;
+    grid-template-columns: repeat(4, 100px);
+    grid-template-rows: repeat(4, 100px);
+    position: relative;
+
+    background-color: rgb(22, 21, 21);
+}
+
+@keyframes cellEntry {
+    0% {
+        transform: scale(0) translateY(100px);
+        opacity: 0;
+    }
+
+    100% {
+        transform: scale(1) translateY(0);
+        opacity: 1;
+    }
+}
+
+.cell {
+    background-color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100px;
+    height: 100px;
+    font-size: 3rem;
+    border: 1px solid #000;
+    cursor: pointer;
+    position: absolute;
+    transition: transform 0.3s ease;
+}
+
+.cell.red {
+    background-color: #9b1c31;
+}
+
+.cell.white {
+    background-color: white;
+}
+
+.cell.target {
+    color: #F2A900;
+}
+
+.cell.animated {
+    animation: cellEntry 0.4s ease-out;
+}
+
+.cell.empty {
+    z-index: -1;
+}
+
+.cell.empty {
+    z-index: -1;
+}
