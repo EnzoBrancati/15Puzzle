@@ -57,21 +57,26 @@ function startGame() {
             cellElement.style.top = `${row * 100}px`;
             cellElement.style.left = `${col * 100}px`;
 
-            cellElement.addEventListener('click', handleClick);
+            cellElement.addEventListener("mousedown", handleClick);
+            cellElement.addEventListener("touchstart", (event) => {
+                event.preventDefault(); // Prevents the double event on mobile
+                handleClick;
+            }, { passive: false });
+
             board.appendChild(cellElement);
         });
 
         if (!hasAnimated) {
-            const cells = document.querySelectorAll('.cell');
+            const cells = document.querySelectorAll(".cell'");
             setTimeout(() => {
                 cells.forEach(cell => {
-                    cell.classList.add('animated');
+                    cell.classList.add("animated");
                 });
             }, 10);
 
             setTimeout(() => {
                 cells.forEach(cell => {
-                    cell.classList.remove('animated');
+                    cell.classList.remove("animated");
                 });
             }, 500);
 
@@ -222,5 +227,10 @@ function startGame() {
     renderBoard();
     document.addEventListener("keydown", handleKeyPress);
 }
+
+document.documentElement.setAttribute("translate", "no");
+document.body.setAttribute("translate", "no");
+
+document.getElementById("game-container").addEventListener("selectstart", (e) => e.preventDefault());
 
 startGame();

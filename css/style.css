@@ -30,6 +30,11 @@ body {
     margin-right: auto;
     margin-bottom: 0px;
     margin-left: auto;
+
+    user-select: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
 }
 
 h1 {
