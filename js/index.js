@@ -67,7 +67,7 @@ function startGame() {
         });
 
         if (!hasAnimated) {
-            const cells = document.querySelectorAll(".cell'");
+            const cells = document.querySelectorAll(".cell");
             setTimeout(() => {
                 cells.forEach(cell => {
                     cell.classList.add("animated");
