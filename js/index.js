@@ -60,7 +60,7 @@ function startGame() {
             cellElement.addEventListener("mousedown", handleClick);
             cellElement.addEventListener("touchstart", (event) => {
                 event.preventDefault(); // Prevents the double event on mobile
-                handleClick;
+                handleClick(event);
             }, { passive: false });
 
             board.appendChild(cellElement);
