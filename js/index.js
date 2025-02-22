@@ -127,7 +127,10 @@ function startGame() {
 
         if (animationEnabled) {
             fromCellElement.style.transition = 'transform 0.3s ease';
-            fromCellElement.style.transform = `translate(${(toCol - fromCol) * 100}px, ${(toRow - fromRow) * 100}px)`;
+            fromCellElement.style.transform = `
+                translate(${(toCol - fromCol) * fromCellElement.offsetWidth}px,
+                ${(toRow - fromRow) * fromCellElement.offsetHeight}px)
+            `;
         }
 
         setTimeout(() => {
