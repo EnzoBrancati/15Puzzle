@@ -158,6 +158,49 @@ button:hover {
     z-index: -1;
 }
 
+@media (min-width: 1367px) {
+
+    #game-container {
+        width: 640px;
+    }
+
+    h1 {
+        font-size: 5rem;
+    }
+
+    button#restart-btn {
+        width: 200px;
+        font-size: 3rem;
+    }
+
+    #counter {
+        width: 350px;
+        font-size: 3rem;
+    }
+
+    #time,
+    #moves {
+        margin: 15px;
+    }
+
+    button#toggle-animation-btn {
+        width: 500px;
+        font-size: 4vw;
+    }
+
+    #game-board {
+        grid-template-columns: repeat(4, 150px);
+        grid-template-rows: repeat(4, 150px);
+
+    }
+
+    .cell {
+        width: 150px;
+        height: 150px;
+        font-size: 5rem;
+    }
+}
+
 @media (max-width: 480px) {
 
     #game-container {
